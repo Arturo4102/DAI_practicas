@@ -7,13 +7,6 @@
     color: gray;
 }
 
-.hovered {
-    color: yellow;
-}
-
-.clicked {
-    color: blue;
-}
 
 /* Estilo para el index.html */
 .container {
@@ -24,7 +17,7 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px black;
 }
 
 .image-container {
@@ -32,8 +25,8 @@
 }
 
 .card-img-top {
-    width: '200px';
-    height: 'auto';
+    width: 200px;
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
     margin: 0 auto;

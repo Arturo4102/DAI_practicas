@@ -1,5 +1,6 @@
 // StarRating.jsx
-//Tenemos que crear un archivo nuevo para meter el número de la valoración y los votos
+
+//Tenemos que crear este archivo para meter el número de la valoración y los votos
 import React from 'react';
 import { Rating } from 'primereact/rating';
 
