@@ -1,0 +1,79 @@
+<!-- Plantilla de barra de navegación -->
+
+<nav class="
+navbar navbar-expand-lg nav nav-underline
+bg-body-tertiary navbar bg-primary
+border-bottom border-body
+data-bs-theme='dark'">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index'%}">Etienda</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{% url 'index'%}" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Categoria
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item"
+                                href="{% url 'buscar_categoria' categoria='men\'s clothing' %}">Ropa de
+                                hombre</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item"
+                                href="{% url 'buscar_categoria' categoria='women\'s clothing' %}">Ropa
+                                de
+                                mujer</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'buscar_categoria' categoria='jewelery' %}">Joyas</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'buscar_categoria' categoria='electronics' %}">
+                                Electronics</a>
+                        </li>
+                    </ul>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'nuevo_producto' %}">Añadir producto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Hi {{ user.username }}!</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'logout' %}"> Log Out</a>
+                </li>
+                {% else %}
+                <li>
+                    <a class="nav-link" href="{% url 'login' %}"> Log In</a>
+                </li>
+                {%endif%}
+            </ul>
+
+            <form class="d-flex" action="{% url 'buscar_producto' %}" method="get">
+                <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search"
+                    name="producto" />
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+
+
+        </div>
+    </div>
+</nav>

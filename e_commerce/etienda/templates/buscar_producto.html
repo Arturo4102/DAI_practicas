@@ -1,0 +1,17 @@
+<!-- Plantilla para usar la búsqueda de un producto-->
+{% extends 'base.html' %}
+{% block title %}Buscar Producto{% endblock %}
+
+<!-- Bloque customizable -->
+{% block content %}
+
+<main>
+    <div class="container">
+        <h1>Resultados de la búsqueda:</h1>
+        <br>
+        {%include 'mostrar_resultados.html'%}
+        <br>
+        <p><a href="{% url 'index' %}">Volver a la página principal</a></p>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- Plantilla para usar el buscador de categorías-->
+{% extends 'base.html' %}
+{% block title %}Buscar Categoria{% endblock %}
+
+<!-- Bloque customizable -->
+{% block content %}
+
+<main>
+    <div class="container">
+        <h1>Productos en: <strong>{{categoria}}</strong></h1>
+        <br>
+        {%include 'mostrar_resultados.html'%}
+
+        <br>
+        <p><a href="{% url 'index' %}">Volver a la página principal</a></p>
+    </div>
+</main>
+{% endblock %}

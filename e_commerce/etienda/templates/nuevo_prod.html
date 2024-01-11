@@ -1,0 +1,24 @@
+<!-- Plantilla para añadir a un nuevo producto-->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Nuevo Producto{% endblock %}
+
+<!-- Bloque customizable -->
+{% block content %}
+<article>
+    <section class="form_nuevo_prod col-12">
+        <h2>Formulario</h2>
+        <form action="{% url 'nuevo_producto' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ producto_form.as_div }}
+            <br><br>
+            <button type="submit">Añadir producto</button>
+        </form>
+    </section>
+</article>
+
+<br>
+<br>
+<p><a href="{% url 'index' %}">Volver a la página principal</a></p>
+
+{% endblock %}

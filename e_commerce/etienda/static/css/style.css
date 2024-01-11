@@ -1,0 +1,85 @@
+/* Estilo para las estrellas */
+.checked {
+    color: orange;
+}
+
+.not_checked {
+    color: gray;
+}
+
+.hovered {
+    color: yellow;
+}
+
+.clicked {
+    color: blue;
+}
+
+/* Estilo para el index.html */
+.container {
+    margin-top: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    text-align: center;
+}
+
+.card-img-top {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #555;
+}
+
+.category {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.product-rating {
+    color: #f8d300;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 1.2rem;
+}
+
+.buy-button {
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+/* Estilos ads */
+#ads {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.ad-container {
+    flex: 1;
+    margin: 0 10px;
+}

@@ -1,0 +1,48 @@
+<!-- Plantilla para mostrar a un producto-->
+
+{% load static %}
+
+{% if productos %}
+<article>
+    <!-- Links de las estrellas -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script src="{% static 'js/star_rating.js' %}"></script>
+
+    <section class="container">
+        {% for prod in productos %}
+        <div class="card product-card row">
+            {% if prod.image %}
+            <div class="image-container">
+                <img src="{% static prod.image %}" alt="{{ prod.title }}" class="card-img-top">
+            </div>
+            {% endif %}
+
+            <div class="card-body">
+                <h2 class="card-title">{{ prod.title }}</h2>
+                <p class="card-text description">{{ prod.description }}</p>
+                <h5 class="card-text category">Categoría: {{ prod.category }}</h5>
+
+                <!-- Estrellas del producto -->
+                <div><span class="sp" data-product-id="{{ prod.id }}"></span> </div>
+
+
+                <h5 class="card-text price text-success font-weight-bold">{{ prod.price }} €</h5>
+
+                <div class="buy-button">
+                    <button type="button" class="btn btn-sm btn-outline-success">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endfor %}
+
+
+</article>
+
+{% else %}
+<h3>No se encontraron productos que coincidan con la búsqueda.</h3>
+{% endif %}

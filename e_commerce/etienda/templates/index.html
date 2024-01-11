@@ -1,0 +1,21 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Etienda{% endblock %}
+
+<!-- Bloque customizable -->
+{% block content %}
+<main>
+
+    <div class="container text-center">
+        <h1 class="text-center">Ofertas</h1>
+        <div class="row">
+            <br>
+            {%include 'mostrar_resultados.html'%}
+            <br>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
