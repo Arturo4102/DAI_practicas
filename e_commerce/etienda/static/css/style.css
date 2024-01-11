@@ -32,7 +32,8 @@
 }
 
 .card-img-top {
-    width: 50%;
+    width: '200px';
+    height: 'auto';
     object-fit: cover;
     border-radius: 8px;
     margin: 0 auto;
