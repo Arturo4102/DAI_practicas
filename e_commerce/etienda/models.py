@@ -5,6 +5,7 @@ from django.contrib import messages
 from pymongo import MongoClient
 import logging
 from bson.objectid import ObjectId
+from Ecommerce.settings import LOG_PATH
 
 
 logger = logging.getLogger(__name__)
@@ -47,6 +48,7 @@ print("\n\nEn la BD hay: " + str(compras_collection.count_documents({})) +
 
 print("\nEn la BD hay: " +
       str(productos_collection.count_documents({})) + " compras insertadas.\n")
+
 
 #  Imprimir un producto y una compra
 if productos_collection.count_documents({}):

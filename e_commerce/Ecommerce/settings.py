@@ -140,10 +140,17 @@ LOGGING_CONFIG = None
 
 # Copiado de la explicación de la práctica
 LOG_FILE = 'Server.log'
-LOG_PATH = os.path.join(BASE_DIR, LOG_FILE)
+
+# Asegura que el directorio del archivo log exista
+LOG_PATH = os.path.join(BASE_DIR, 'Server.log')
 
 # Asegura que el directorio del archivo log exista
 os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
+
+# Asegura que el archivo exista
+if not os.path.exists(LOG_PATH):
+    with open(LOG_PATH, 'w'):
+        pass
 
 
 LOGGING = {
@@ -167,7 +174,6 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            # Usamos el os.path.join para manejar la ruta
             'filename': LOG_PATH,
             'formatter': 'verbose',
             'mode': 'w'   # ?? sobre escribe cada vez
