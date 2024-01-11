@@ -43,7 +43,9 @@ def buscar_categoria(request, categoria):
 
 @login_required  # Necesitamos que esté logeado el usuario y tenga los permisos
 def nuevo_producto(request):
-    logger.debug("Este es un mensaje de depuración")
+    # logger.debug("Este es un mensaje de depuración")
+    # print("Mensaje de depuración impreso en la consola")
+
     if request.method == 'POST':
         producto_form = ProductoForm(request.POST, request.FILES)
 
@@ -72,7 +74,7 @@ def nuevo_producto(request):
             except Exception as e:
                 messages.error(request, f"Error al escribir el archivo: {e}")
                 logger.error('Error añadiendo un producto')
-            logger.info("Este es un mensaje de información")
+            # logger.info("Este es un mensaje de información")
             producto_dict['image'] = ruta_enlace
 
             InsertarProducto(request, producto_dict)

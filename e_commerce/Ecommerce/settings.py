@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import logging
 import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
@@ -152,6 +153,11 @@ if not os.path.exists(LOG_PATH):
     with open(LOG_PATH, 'w'):
         pass
 
+# Imprime la ruta del archivo de log
+# print(f'Log file path: {LOG_PATH}')
+
+# Establece el nivel del logger raíz a DEBUG
+logging.getLogger().setLevel(logging.DEBUG)
 
 LOGGING = {
     'version': 1,
@@ -193,12 +199,14 @@ LOGGING = {
             'level': 'ERROR',
         },
 
-        '': {  # los demás en cada archivo  ??
+        '': {
             'handlers': ['file', 'console'],
             'level': 'DEBUG',
         }
+
     }
 }
+
 
 LOGIN_REDIRECT_URL = "index"
 LOGOUT_REDIRECT_URL = "index"
@@ -215,6 +223,7 @@ MESSAGE_TAGS = {
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
+
 ]
 
 CSRF_TRUSTED_ORIGINS = [
